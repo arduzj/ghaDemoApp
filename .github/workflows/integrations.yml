@@ -11,15 +11,9 @@ jobs:
           run: npm install
         - name: Ejecutar en produccion
           run: npm run build
-    subir-artefacto:
-      name: Subir artefacto
-      runs-on: ubuntu-latest
-      needs: build-project
-      steps:
         - name: Crear un artefacto
           uses: actions/upload-artifact@v4
           with:
             name: Artefacto 1
             path: .next/
-
                 
