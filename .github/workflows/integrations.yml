@@ -19,6 +19,7 @@ jobs:
     release-project:
       name: Despliegue de Proyecto
       runs-on: ubuntu-latest
+      needs: build-project
       steps:
         - uses: actions/download-artifact@v4
           with:
