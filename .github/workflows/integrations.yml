@@ -2,13 +2,23 @@ name: Contruir una App en Next.JS
 on: push
 jobs:
     build-project:
-        name: Construccion de Proyecto
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout del código
-              uses: actions/checkout@v4
-            - name: Instalar dependencias
-              run: npm install
-            - name: Ejecutar en produccion
-              run: npm run build
-              
+      name: Construccion de Proyecto
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout del código
+          uses: actions/checkout@v4
+        - name: Instalar dependencias
+          run: npm install
+        - name: Ejecutar en produccion
+          run: npm run build
+    subir-artefacto:
+      name: Subir artefacto
+      runs-on: ubuntu-latest
+      steps:
+        - name: Crear un artefacto
+          uses: actions/upload-artifact@v4
+          with:
+            name: Artefacto 1
+            path: .next/
+
+                
