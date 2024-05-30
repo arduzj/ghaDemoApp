@@ -1,4 +1,4 @@
-name: Contruir una App en Next.JS
+name: Construir una App en Next.JS
 on: push
 jobs:
     build-project:
@@ -16,4 +16,13 @@ jobs:
           with:
             name: Artefacto 1
             path: .next/
-                
+    release-project:
+      name: Despliegue de Proyecto
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/download-artifact@v4
+          with:
+            name: Artefacto 1
+        - name: Mostrar estructura del proyecto
+          run: ls -R
+
