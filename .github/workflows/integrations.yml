@@ -21,10 +21,12 @@ jobs:
       runs-on: ubuntu-latest
       needs: build-project
       steps:
+        - name: Crear directorio de descargas
+          run: mkdir download
         - uses: actions/download-artifact@v4
           with:
             name: Artefacto 1
-            path: download/
+            path: download
         - name: Mostrar estructura del proyecto
           run: ls -R
 
