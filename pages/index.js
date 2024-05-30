@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Layout from "../components/layout";
 import Jumbotron from "../components/jumbotron";
 import Board from "../components/board";
-
 import Locations from "./data.json"
 
 const Index = ({ locationGroups }) =>
