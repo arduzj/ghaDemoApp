@@ -1,5 +1,7 @@
 name: Construir una App en Next.JS
 on: push
+permissions:
+  contents: write
 jobs:
     build-project:
       name: Construccion de Proyecto
@@ -15,6 +17,6 @@ jobs:
           uses: JamesIves/github-pages-deploy-action@v4
           with:
             branch: main
-            folder: .next/
+            folder: .next
 
 
