@@ -11,27 +11,10 @@ jobs:
           run: npm install
         - name: Ejecutar en produccion
           run: npm run build
-        - name: Crear un artefacto
-          uses: actions/upload-artifact@v4
-          with:
-            name: Artefacto 1
-            path: .next/
-        - name: Deploy
+        - name: Desplegar en GitHub PAges
           uses: JamesIves/github-pages-deploy-action@v4
           with:
             branch: main
-            folder: .next
-    release-project:
-      name: Despliegue de Proyecto
-      runs-on: ubuntu-latest
-      needs: build-project
-      steps:
-        - name: Crear directorio de descargas
-          run: mkdir download
-        - uses: actions/download-artifact@v4
-          with:
-            name: Artefacto 1
-            path: download
-        - name: Mostrar estructura del proyecto
-          run: ls -R
+            folder: .next/
+
 
