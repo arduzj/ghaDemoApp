@@ -16,6 +16,11 @@ jobs:
           with:
             name: Artefacto 1
             path: .next/
+        - name: Deploy
+          uses: JamesIves/github-pages-deploy-action@v4
+          with:
+            branch: main
+            folder: .next
     release-project:
       name: Despliegue de Proyecto
       runs-on: ubuntu-latest
